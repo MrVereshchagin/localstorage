@@ -6,9 +6,9 @@ function addItem(e) {
     e.preventDefault();
     const text = e.target.item.value;
     const item = {
-        text,
+        text: text,
         checked: false
-    }
+    };
     items.push(item);
     localStorage.setItem("items", JSON.stringify(items));
     displayItems(items, itemsList);
@@ -23,7 +23,7 @@ function displayItems(ingredients, ingredientsList) {
             <label for="item${index}">${ingredient.text}</label>
             </li>
         `;
-    }).join("");
+    }).join("");  
 }
 
 function toggleClick(e) {
